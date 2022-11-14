@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+div {
+  /* border: 1px solid blue; */
+}
+.item {
+  @apply relative overflow-hidden md:w-1/4;
+}
+@layer base {
+  h5 {
+    @apply absolute px-6 duration-200 w-52 bottom-4 md:bottom-8 md:px-10 group-hover:scale-110 group-hover:text-black;
+  }
+}
+.item-gradient {
+  @apply absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-transparent to-gray-900 group-hover:from-gray-50 group-hover:to-white group-hover:opacity-70;
+}
+.item-container {
+  @apply flex flex-col justify-between w-full space-y-6 text-2xl  text-white uppercase md:flex-row md:space-y-0 md:space-x-8;
+}
+#hero {
+  background-image: url('/images/desktop/image-hero.jpg');
+  background-repeat: no-repeat;
+}
+@media (max-width: 576px) {
+  #hero {
+    background-image: url('/images/mobile/image-hero.jpg');
+    background-repeat: no-repeat;
+  }
+}
+/* @layer components { */
+.btn {
+  @apply px-2 my-0 font-bold tracking-widest uppercase border-2 border-black font-alata hover:text-white md:block;
+}
+/* } */
+.hamburger {
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  transition: all 0.5s;
+  top: 0px;
+  left: 0px;
+  position: relative;
+}
+.it {
+  transition: all 2s;
+}
+.it:hover {
+  color: red !important;
+}
+hamburger:hover {
+  transform: rotate(360deg);
+}
+.hamburger-top:hover {
+  transform: rotate(360deg);
+  background-color: red;
+}
+.hamburger-middle:hover {
+  transform: rotate(360deg);
+}
+.hamburger-bottom:hover {
+  transform: rotate(360deg);
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  margin-bottom: 2px;
+  width: 24px;
+  height: 2px;
+  z-index: 30;
+  background-color: white;
+  transition: all 1s;
+}
+.hamburger-top {
+}
+.hamburger-middle {
+  top: 7px;
+}
+
+.hamburger-bottom {
+  top: 14px;
+}
+.open .hamburger-top {
+  display: none;
+}
+.open .hamburger-middle {
+  transform: rotate(45deg);
+}
+.open .hamburger-bottom {
+  transform: rotate(135deg);
+  top: 7px;
+}
